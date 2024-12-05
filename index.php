@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Rent Connect Cars</title>
+  <title>Rent Connect</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -48,7 +48,7 @@
         <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>À propos</span></a></li>
         <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Parcours</span></a>
         </li>
-        <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i>
+        <li><a href="#portfolio" class="nav-link scrollto"><i class="bi bi-car-front"></i>
             <span>Voitures</span></a>
         </li>
       </ul>
@@ -59,7 +59,7 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-center">
     <div class="container" data-aos="zoom-in" data-aos-delay="100">
-      <h1>Rent Connect Cars</h1>
+      <h1>Rent Connect</h1>
       <p>Louez la voiture qui fera votre bonheur.
       </p>
       <div class="social-links">
