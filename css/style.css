@@ -4,17 +4,50 @@ body {
     color: #e0e0e0;
   }
   
-  /* Navigation */
-  .nav-menu a {
-    color: #1e1e1e;
+ /* Couleur de base des liens */
+.nav-menu a {
+  color: #1e1e1e;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  transition: all 0.3s ease;
+  text-decoration: none;
   }
   
+  /* Couleur au survol ou lorsqu'actif */
   .nav-menu a:hover, .nav-menu .active {
-    color: #e0e0e0;
+  color: #e0e0e0;
   }
   
-  .nav-menu ul {
-    background-color: #1e1e1e;
+  /* Icones toujours visibles */
+  .nav-menu a .icon,
+  .nav-menu a svg {
+  
+  transition: transform 0.3s ease, stroke 0.3s ease;
+  }
+  
+  /* Apparition du texte au survol */
+  .nav-menu a span {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  white-space: nowrap; /* Empêche le retour à la ligne */
+  }
+  
+  /* Survol : le texte apparaît */
+  .nav-menu a:hover span {
+  opacity: 1;
+  transform: translateX(0);
+  }
+  
+  /* Icône qui change de couleur quand actif */
+  .nav-menu .active svg {
+  color: white;
+  }
+  
+  /* Conserve l'icône visible tout en animant le texte */
+  .nav-menu a:hover svg {
+    color: #e0e0e0; /* Petit effet d'agrandissement au survol */
   }
 
   
