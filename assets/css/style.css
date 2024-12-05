@@ -274,7 +274,7 @@ h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/hero-bg.jpg") 65% 50% no-repeat;
+  background: url("../img/hero-bg.jpg") top right no-repeat;
   background-size: cover;  
   position: relative;
   
@@ -290,7 +290,7 @@ h6 {
 /* Media query pour les petits écrans (mobiles et tablettes) */
 @media (max-width: 768px) {
   #hero {
-    background-position: right 8% center;
+    background-position: right 15% center;
     padding-left: 0; /* Pas de padding sur mobile */
   }
 }
