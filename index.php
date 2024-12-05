@@ -49,7 +49,7 @@
         <li><a href="#resume" class="nav-link scrollto"><i class="bi bi-bookmark-heart"></i> <span>Avis clients</span></a>
         </li>
         <li><a href="#portfolio" class="nav-link scrollto"><i class="bi bi-car-front"></i>
-            <span>Voitures</span></a>
+            <span>Vehicules disponible</span></a>
         </li>
       </ul>
     </nav><!-- .nav-menu -->
