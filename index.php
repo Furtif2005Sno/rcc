@@ -43,15 +43,33 @@
   <header id="header" class="d-flex flex-column justify-content-center">
 
     <nav id="navbar" class="navbar nav-menu">
-      <ul>
-        <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Accueil</span></a></li>
-        <li><a href="#about" class="nav-link scrollto"><svg id="Hand-Gesture-Account--Streamline-Atlas" xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 -0.5 24 24"><desc>Hand Gesture Account Streamline Icon: https://streamlinehq.com</desc><defs></defs><path d="M13.77125 3.70875a2.2904166666666668 2.2904166666666668 0 1 0 4.5808333333333335 0 2.2904166666666668 2.2904166666666668 0 1 0 -4.5808333333333335 0" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path><path d="M19.732083333333335 11.5a3.68 3.68 0 0 0 -3.6704166666666667 -3.6704166666666667A3.68 3.68 0 0 0 12.39125 11.5" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path><path d="m7.810416666666668 16.080833333333334 3.4691666666666667 0.8720833333333334a1.9166666666666667 1.9166666666666667 0 0 0 0.4025 0 1.6291666666666667 1.6291666666666667 0 0 0 1.6291666666666667 -1.6291666666666667v-0.115A1.6291666666666667 1.6291666666666667 0 0 0 12.458333333333334 13.8l-3.19125 -1.5716666666666665A6.890416666666668 6.890416666666668 0 0 0 6.18125 11.5a6.823333333333334 6.823333333333334 0 0 0 -2.185 0.35458333333333336L2.3095833333333338 12.458333333333334H0.4791666666666667" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path><path d="M11.5 17.000833333333333h1.8304166666666666l6.2004166666666665 -1.772916666666667a1.7441666666666669 1.7441666666666669 0 0 1 0.44083333333333335 -0.0575 1.61 1.61 0 0 1 1.5908333333333333 1.6004166666666666v0.10541666666666667a1.6004166666666666 1.6004166666666666 0 0 1 -0.9583333333333334 1.46625L14.375 21.083333333333336a5.5391666666666675 5.5391666666666675 0 0 1 -2.223333333333333 0.46958333333333335 5.54875 5.54875 0 0 1 -1.3225 -0.16291666666666668l-6.708333333333334 -1.6675H0.4791666666666667" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="1"></path></svg> <span>Nos services</span></a></li>
-        <li><a href="#resume" class="nav-link scrollto"><i class="bi bi-bookmark-heart"></i> <span>Avis clients</span></a>
-        </li>
-        <li><a href="#portfolio" class="nav-link scrollto"><i class="bi bi-car-front"></i>
-            <span>Voitures</span></a>
-        </li>
-      </ul>
+    <ul>
+      <li>
+        <a href="#hero" class="nav-link scrollto active">
+          <i class="bx bx-home"></i> <span>Accueil</span>
+        </a>
+      </li>
+      <li>
+        <a href="#about" class="nav-link scrollto">
+          <svg class="nav-icon" id="Hand-Gesture-Account--Streamline-Atlas" xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 -0.5 24 24" width="24" height="24">
+            <path d="M13.77125 3.70875a2.2904166666666668 2.2904166666666668 0 1 0 4.5808333333333335 0 2.2904166666666668 2.2904166666666668 0 1 0 -4.5808333333333335 0" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"></path>
+            <path d="M19.732083333333335 11.5a3.68 3.68 0 0 0 -3.6704166666666667 -3.6704166666666667A3.68 3.68 0 0 0 12.39125 11.5" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"></path>
+            <!-- Other paths -->
+          </svg>
+          <span>Nos services</span>
+        </a>
+      </li>
+      <li>
+        <a href="#resume" class="nav-link scrollto">
+          <i class="bi bi-bookmark-heart"></i> <span>Avis clients</span>
+        </a>
+      </li>
+      <li>
+        <a href="#portfolio" class="nav-link scrollto">
+          <i class="bi bi-car-front"></i> <span>Voitures</span>
+        </a>
+      </li>
+    </ul>
     </nav><!-- .nav-menu -->
 
   </header><!-- End Header -->
