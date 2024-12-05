@@ -45,7 +45,7 @@
     <nav id="navbar" class="navbar nav-menu">
       <ul>
         <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Accueil</span></a></li>
-        <li><a href="#about" class="nav-link scrollto"><i class="support_agent"></i> <span>Nos services</span></a></li>
+        <li><a href="#about" class="nav-link scrollto"><span class="material-symbols-outlined">support_agent</span> <span>Nos services</span></a></li>
         <li><a href="#resume" class="nav-link scrollto"><i class="bi bi-bookmark-heart"></i> <span>Avis clients</span></a>
         </li>
         <li><a href="#portfolio" class="nav-link scrollto"><i class="bi bi-car-front"></i>
