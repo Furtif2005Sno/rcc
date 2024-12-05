@@ -16,8 +16,8 @@
   <!-- Google Fonts -->
   <link
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-    rel="stylesheet">
-
+    rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -45,8 +45,8 @@
     <nav id="navbar" class="navbar nav-menu">
       <ul>
         <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Accueil</span></a></li>
-        <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>À propos</span></a></li>
-        <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Parcours</span></a>
+        <li><a href="#about" class="nav-link scrollto"><i class="support_agent"></i> <span>Nos services</span></a></li>
+        <li><a href="#resume" class="nav-link scrollto"><i class="bi bi-bookmark-heart"></i> <span>Avis clients</span></a>
         </li>
         <li><a href="#portfolio" class="nav-link scrollto"><i class="bi bi-car-front"></i>
             <span>Voitures</span></a>
