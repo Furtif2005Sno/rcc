@@ -43,33 +43,15 @@
   <header id="header" class="d-flex flex-column justify-content-center">
 
     <nav id="navbar" class="navbar nav-menu">
-    <ul>
-      <li>
-        <a href="#hero" class="nav-link scrollto active">
-          <i class="bx bx-home"></i> <span>Accueil</span>
-        </a>
-      </li>
-      <li>
-        <a href="#about" class="nav-link scrollto">
-          <svg class="nav-icon" id="Hand-Gesture-Account--Streamline-Atlas" xmlns="http://www.w3.org/2000/svg" viewBox="-0.5 -0.5 24 24" width="24" height="24">
-            <path d="M13.77125 3.70875a2.2904166666666668 2.2904166666666668 0 1 0 4.5808333333333335 0 2.2904166666666668 2.2904166666666668 0 1 0 -4.5808333333333335 0" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"></path>
-            <path d="M19.732083333333335 11.5a3.68 3.68 0 0 0 -3.6704166666666667 -3.6704166666666667A3.68 3.68 0 0 0 12.39125 11.5" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"></path>
-            <!-- Other paths -->
-          </svg>
-          <span>Nos services</span>
-        </a>
-      </li>
-      <li>
-        <a href="#resume" class="nav-link scrollto">
-          <i class="bi bi-bookmark-heart"></i> <span>Avis clients</span>
-        </a>
-      </li>
-      <li>
-        <a href="#portfolio" class="nav-link scrollto">
-          <i class="bi bi-car-front"></i> <span>Voitures</span>
-        </a>
-      </li>
-    </ul>
+      <ul>
+        <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Accueil</span></a></li>
+        <li><a href="#about" class="nav-link scrollto"><svg id="Hand-Gesture-Account--Streamline-Atlas" xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 24 24"><desc>Hand Gesture Account Streamline Icon: https://streamlinehq.com</desc><defs></defs><path d="M13.1725 3.5475a2.1908333333333334 2.1908333333333334 0 1 0 4.381666666666667 0 2.1908333333333334 2.1908333333333334 0 1 0 -4.381666666666667 0" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="2"></path><path d="M18.874166666666667 11a3.5199999999999996 3.5199999999999996 0 0 0 -3.5108333333333333 -3.5108333333333333A3.5199999999999996 3.5199999999999996 0 0 0 11.8525 11" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="2"></path><path d="m7.470833333333333 15.381666666666668 3.3183333333333334 0.8341666666666666a1.8333333333333333 1.8333333333333333 0 0 0 0.38499999999999995 0 1.5583333333333331 1.5583333333333331 0 0 0 1.5583333333333331 -1.5583333333333331v-0.10999999999999999A1.5583333333333331 1.5583333333333331 0 0 0 11.916666666666666 13.2l-3.0524999999999998 -1.5033333333333332A6.590833333333333 6.590833333333333 0 0 0 5.9125 11a6.526666666666666 6.526666666666666 0 0 0 -2.09 0.33916666666666667L2.2091666666666665 11.916666666666666H0.4583333333333333" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="2"></path><path d="M11 16.261666666666663h1.7508333333333332l5.930833333333333 -1.6958333333333333a1.6683333333333332 1.6683333333333332 0 0 1 0.4216666666666667 -0.05499999999999999 1.5399999999999998 1.5399999999999998 0 0 1 1.5216666666666665 1.5308333333333333v0.10083333333333333a1.5308333333333333 1.5308333333333333 0 0 1 -0.9166666666666666 1.4024999999999999L13.75 20.166666666666664a5.298333333333334 5.298333333333334 0 0 1 -2.1266666666666665 0.44916666666666666 5.3075 5.3075 0 0 1 -1.265 -0.15583333333333335l-6.416666666666666 -1.595H0.4583333333333333" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="2"></path></svg> <span>Nos services</span></a></li>
+        <li><a href="#resume" class="nav-link scrollto"><i class="bi bi-bookmark-heart"></i> <span>Avis clients</span></a>
+        </li>
+        <li><a href="#portfolio" class="nav-link scrollto"><i class="bi bi-car-front"></i>
+            <span>Voitures</span></a>
+        </li>
+      </ul>
     </nav><!-- .nav-menu -->
 
   </header><!-- End Header -->
