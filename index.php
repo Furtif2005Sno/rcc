@@ -60,10 +60,10 @@
   <section id="hero" class="d-flex flex-column justify-content-center">
     <div class="container" data-aos="zoom-in" data-aos-delay="100">
       <h1>Rent Connect Cars</h1>
-      <p>Trouvez la voiture qui fera votre bonheur.
+      <p>Louez la voiture qui fera votre bonheur.
       </p>
       <div class="social-links">
-        <a href="https://www.instagram.com/jolan_nrt/" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="https://www.instagram.com/rent_connect_cars/" class="instagram"><i class="bx bxl-instagram"></i></a>
       </div>
     </div>
   </section><!-- End Hero -->
