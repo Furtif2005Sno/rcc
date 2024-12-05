@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Portfolio de Jolan Noirot</title>
+  <title>Rent Connect Cars</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -49,7 +49,7 @@
         <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Parcours</span></a>
         </li>
         <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i>
-            <span>Réalisations</span></a>
+            <span>Voitures</span></a>
         </li>
       </ul>
     </nav><!-- .nav-menu -->
@@ -59,26 +59,12 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-center">
     <div class="container" data-aos="zoom-in" data-aos-delay="100">
-      <h1>Jolan Noirot</h1>
-      <p>Je suis <span class="typed"
-          data-typed-items="designer, développeur, futur étudiant en master informatique, photographe, modélisateur 3D"></span>
+      <h1>Rent Connect Cars</h1>
+      <p>Trouvez la voiture qui fera votre bonheur.
       </p>
       <div class="social-links">
-        <a href="https://twitter.com/Furtif2005Sno" class="twitter"><i class="bi bi-twitter-x"></i></a>
-        <a href="https://www.facebook.com/jolan.noirot.9/" class="facebook"><i class="bx bxl-facebook"></i></a>
         <a href="https://www.instagram.com/jolan_nrt/" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="https://www.linkedin.com/in/jolan-noirot-97428a294/" class="linkedin"><i
-            class="bx bxl-linkedin"></i></a>
       </div>
-      <!-- Bouton Télécharger CV avec style personnalisé -->
-      <div class="mt-4">
-        <a href="assets/pdf/CV - Jolan Noirot.pdf"
-          class="btn btn-outline-danger btn-lg rounded-pill d-flex align-items-center justify-content-center custom-danger col-12 col-lg-3"
-          download>
-          <i class="bi bi-download me-2"></i> Télécharger mon CV
-        </a>
-      </div>
-
     </div>
   </section><!-- End Hero -->
 
