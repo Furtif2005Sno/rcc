@@ -27,7 +27,6 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link rel="preload" href="assets/vendor/bootstrap/css/bootstrap.min.css" as="style" onload="this.rel='stylesheet'">
   <link href="assets/css/style.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
   <script src="assets/js/main.js"></script>
@@ -53,7 +52,7 @@
         <li><a href="#resume" class="nav-link scrollto"><i class="bi bi-bookmark-heart"></i> <span>Avis clients</span></a>
         </li>
         <li><a href="#portfolio" class="nav-link scrollto"><i class="bi bi-car-front"></i>
-            <span>Vehicules disponibles</span></a>
+            <span>Vehicules disponible</span></a>
         </li>
       </ul>
     </nav><!-- .nav-menu -->
@@ -109,7 +108,7 @@
               </div>
               <h3 class="fs-2 text-body-emphasis text-services">Mise en relation avec nos partenaires</h3>
               <p>Nous collaborons avec des agences de location de confiance pour vous garantir des prestations impeccables.</p>
-              <p>Une fois votre projet défini, nous sélectionnons pour vous le partenaire le plus adapté à vos attentes et à votre budget.</p>
+              <p>Une fois votre projet défini, nous sélectionnons pour vous le partenaire le plus adapté à vos attentes et à votre budget.</p>            
             </div>
           </div>
           <div class="row g-4 py-5 row-cols-1 row-cols-lg-3 justify-content-center">
@@ -123,7 +122,7 @@
                   <li> <span>Contacter les agences partenaires.</span></li>
                   <li> <span>Comparer les offres et négocier pour obtenir les meilleures conditions.</span></li>
                   <li> <span>Vous rediriger vers le partenaire idéal avec tous les détails nécessaires.</span></li>
-                </ul>
+                </ul>            
             </div>
 
             <div class="feature col">
@@ -205,124 +204,175 @@
     </section><!-- End Resume Section -->
 
     <!-- ======= Portfolio Section ======= -->
-    <?php
-      require 'db-config.php'; // Connexion à la base de données
-
-      // Récupérer les marques et modèles distincts pour les listes déroulantes
-      $marques = $db1->query("SELECT DISTINCT marque FROM voitures ORDER BY marque ASC");
-      $modeles = $db1->query("SELECT DISTINCT modele FROM voitures ORDER BY modele ASC");
-
-      // Initialisation des filtres
-      $marque_filtre = isset($_GET['marque']) ? $_GET['marque'] : '';
-      $modele_filtre = isset($_GET['modele']) ? $_GET['modele'] : '';
-      $prix_min = isset($_GET['prix_min']) ? $_GET['prix_min'] : '';
-      $prix_max = isset($_GET['prix_max']) ? $_GET['prix_max'] : '';
-
-      // Construire la requête dynamique en fonction des filtres
-      $sql = "SELECT * FROM voitures WHERE 1=1";
-      if (!empty($marque_filtre)) {
-          $sql .= " AND marque = '" . $db1->real_escape_string($marque_filtre) . "'";
-      }
-      if (!empty($modele_filtre)) {
-          $sql .= " AND modele = '" . $db1->real_escape_string($modele_filtre) . "'";
-      }
-      if (!empty($prix_min)) {
-          $sql .= " AND prix >= " . (float)$prix_min;
-      }
-      if (!empty($prix_max)) {
-          $sql .= " AND prix <= " . (float)$prix_max;
-      }
-
-      $result = $db1->query($sql);
-    ?>
-
-  <!-- Section Portfolio -->
-  <section id="portfolio" class="portfolio section-bg">
+    <section id="portfolio" class="portfolio section-bg">
       <div class="container" data-aos="fade-up">
 
-          <div class="section-title">
-              <h2>Voitures disponibles</h2>
-              <p>Un résumé de toutes les voitures disponibles.</p>
+        <div class="section-title">
+          <h2>Voitures disponibles</h2>
+          <p>Un résumé de tout les projets effectué durant le BTS</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">Tout</li>
+              <li data-filter=".filter-app">Réseaux</li>
+              <li data-filter=".filter-web">Développement</li>
+              <li data-filter=".filter-card">Organisation</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>App 1</h4>
+                <p>App</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
+                    class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external"
+                    title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <!-- Formulaire de filtre -->
-          <form method="GET" class="mb-4">
-              <div class="row">
-                  <!-- Menu déroulant pour la marque -->
-                  <div class="col-lg-3">
-                      <select name="marque" class="form-control">
-                          <option value="">Toutes les marques</option>
-                          <?php
-                          if ($marques->num_rows > 0) {
-                              while ($row = $marques->fetch_assoc()) {
-                                  $selected = ($row['marque'] === $marque_filtre) ? 'selected' : '';
-                                  echo '<option value="' . htmlspecialchars($row['marque']) . '" ' . $selected . '>' . htmlspecialchars($row['marque']) . '</option>';
-                              }
-                          }
-                          ?>
-                      </select>
-                  </div>
-
-                  <!-- Menu déroulant pour le modèle -->
-                  <div class="col-lg-3">
-                      <select name="modele" class="form-control">
-                          <option value="">Tous les modèles</option>
-                          <?php
-                          if ($modeles->num_rows > 0) {
-                              while ($row = $modeles->fetch_assoc()) {
-                                  $selected = ($row['modele'] === $modele_filtre) ? 'selected' : '';
-                                  echo '<option value="' . htmlspecialchars($row['modele']) . '" ' . $selected . '>' . htmlspecialchars($row['modele']) . '</option>';
-                              }
-                          }
-                          ?>
-                      </select>
-                  </div>
-
-                  <!-- Input pour le prix minimum -->
-                  <div class="col-lg-3">
-                      <input type="number" name="prix_min" class="form-control" placeholder="Prix min (€)" value="<?= htmlspecialchars($prix_min); ?>">
-                  </div>
-
-                  <!-- Input pour le prix maximum -->
-                  <div class="col-lg-3">
-                      <input type="number" name="prix_max" class="form-control" placeholder="Prix max (€)" value="<?= htmlspecialchars($prix_max); ?>">
-                  </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Ressources Éducatives</h4>
+                <p>Un réseau social permettant le partage de ressources éducatives</p>
+                <div class="portfolio-links">
+                  <a href="portfolio-details-re.html" class="portfolio-details-lightbox" data-glightbox="type: external"
+                    title="Portfolio Details"><i class="bx bx-plus"></i></a>
+                  <a href="https://ressources-educatives.jolan-nrt.duckdns.org" class="portfolio-details-lightbox"
+                    data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
               </div>
-
-              <div class="row mt-3">
-                  <div class="col-lg-12 text-center">
-                      <button type="submit" class="btn btn-primary">Filtrer</button>
-                      <a href="?" class="btn btn-secondary">Réinitialiser</a>
-                  </div>
-              </div>
-          </form>
-
-          <!-- Conteneur des voitures -->
-          <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-              <?php
-              if ($result && $result->num_rows > 0) {
-                  while ($row = $result->fetch_assoc()) {
-                      echo '<div class="col-lg-4 col-md-6 portfolio-item filter-app">';
-                      echo '  <div class="portfolio-wrap">';
-                      echo '    <img src="' . htmlspecialchars($row['photo_presentation']) . '" class="img-fluid" alt="' . htmlspecialchars($row['modele']) . '">';
-                      echo '    <div class="portfolio-info">';
-                      echo '      <h4>' . htmlspecialchars($row['marque']) . ' ' . htmlspecialchars($row['modele']) . '</h4>';
-                      echo '      <p>' . number_format($row['prix'], 2, ',', ' ') . ' €</p>';
-                      echo '      <div class="portfolio-links">';
-                      echo '        <a href="car-details.php?id=' . $row['id'] . '"><i class="bx bx-plus"></i></a>';
-                      echo '      </div>';
-                      echo '    </div>';
-                      echo '  </div>';
-                      echo '</div>';
-                  }
-              } else {
-                  echo '<p>Aucune voiture correspondante.</p>';
-              }
-              ?>
+            </div>
           </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>App 2</h4>
+                <p>App</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery"
+                    class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external"
+                    title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Forum Cybersécurité</h4>
+                <p>Organisateur d'un forum sur la cybersécurité</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery"
+                    class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external"
+                    title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Web 2</h4>
+                <p>Web</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/portfolio-5.jpg" class="portfolio-details-lightbox"
+                    data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external"
+                    title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Projet BMS</h4>
+                <p>Création d'une infrastructure réseau.</p>
+                <div class="portfolio-links">
+                  <a href="portfolio-details-bms.html" class="portfolio-details-lightbox" data-glightbox="type: external"
+                    title="Portfolio Details"><i class="bx bx-plus"></i></a>
+                  <a href="assets/pdf/Documentation Projet BMS - Portfolio.pdf" class="portfolio-details-lightbox"
+                    data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Card 1</h4>
+                <p>Card</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery"
+                    class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external"
+                    title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Card 3</h4>
+                <p>Card</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery"
+                    class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external"
+                    title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Web 3</h4>
+                <p>Web</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery"
+                    class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external"
+                    title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
       </div>
-  </section>
-
+    </section><!-- End Portfolio Section -->
 
 
   </main><!-- End #main -->
@@ -367,8 +417,7 @@
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js" defer></script>
-  <script src="js/script.js" defer></script>
+  <script src="assets/js/main.js"></script>
 
 </body>
 
