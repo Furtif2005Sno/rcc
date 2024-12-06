@@ -1,114 +1,111 @@
+<?php
+// Connexion à la base de données
+$servername = "localhost";
+$username = "root"; // Change si nécessaire
+$password = "";     // Change si nécessaire
+$dbname = "RCC-Cars";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Vérifier la connexion
+if ($conn->connect_error) {
+    die("Échec de la connexion : " . $conn->connect_error);
+}
+
+// Vérifier si l'ID de la voiture est passé en paramètre
+if (!isset($_GET['id'])) {
+    die("ID de voiture manquant.");
+}
+
+$voiture_id = intval($_GET['id']);
+
+// Récupérer les informations de la voiture
+$sql_voiture = "SELECT * FROM voitures WHERE id = $voiture_id";
+$result_voiture = $conn->query($sql_voiture);
+
+if ($result_voiture->num_rows === 0) {
+    die("Voiture non trouvée.");
+}
+
+$voiture = $result_voiture->fetch_assoc();
+
+// Récupérer les caractéristiques
+$sql_caracteristiques = "SELECT nom, valeur FROM caracteristiques_voitures WHERE voiture_id = $voiture_id";
+$result_caracteristiques = $conn->query($sql_caracteristiques);
+
+// Récupérer les photos
+$sql_photos = "SELECT url FROM photos_voitures WHERE voiture_id = $voiture_id";
+$result_photos = $conn->query($sql_photos);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>Projet BMS</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <title>Détails de la voiture</title>
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: MyResume
-  * Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
-  * Updated: Mar 17 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
-
-  <main id="main">
-
-    <!-- ======= Portfolio Details Section ======= -->
-    <section id="portfolio-details" class="portfolio-details">
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-8">
-            <div class="portfolio-details-slider swiper">
-              <div class="swiper-wrapper align-items-center">
-
+<main id="main">
+  <section id="portfolio-details" class="portfolio-details">
+    <div class="container">
+      <div class="row gy-4">
+        <!-- Section Carrousel -->
+        <div class="col-lg-8">
+          <div class="portfolio-details-slider swiper">
+            <div class="swiper-wrapper align-items-center">
+              <?php while ($photo = $result_photos->fetch_assoc()): ?>
                 <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-details-bms-1.jpg" alt="">
+                  <img src="<?= htmlspecialchars($photo['url']) ?>" alt="Photo de la voiture">
                 </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-details-bms-2.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-details-bms-3.jpg" alt="">
-                </div>
-
-              </div>
-              <div class="swiper-pagination"></div>
+              <?php endwhile; ?>
             </div>
+            <div class="swiper-pagination"></div>
           </div>
-
-          <div class="col-lg-4">
-            <div class="portfolio-info">
-              <h3>Project BMS</h3>
-              <ul>
-                <li><strong>Categorie</strong>: Réseaux</li>
-                <li><strong>Client</strong>: BMS</li>
-                <li><strong>Date</strong>: 3 Décembre 2024</li>
-                <li><strong>Documentation</strong>: <a href="assets/pdf/Documentation Projet BMS - Portfolio.pdf">Documentation Projet BMS</a></li>
-              </ul>
-            </div>
-            <div class="portfolio-description">
-              <h2>Mise en place de l'infrastructure de BMS</h2>
-              <p>
-                Mise en place de l'infrastructure réseau de BMS, configuration du pare-feu, mise en place d'une DMZ avec un serveur Web accessible depuis internet et lié a une base de données dans le LAN, mise en place d'une supervision via Nagios.
-              </p>
-            </div>
-          </div>
-
         </div>
 
+        <!-- Section Informations -->
+        <div class="col-lg-4">
+          <div class="portfolio-info">
+            <h3><?= htmlspecialchars($voiture['marque'] . " " . $voiture['modele']) ?></h3>
+            <ul>
+              <li><strong>Prix</strong>: <?= number_format($voiture['prix'], 2, ',', ' ') ?> €</li>
+              <li><strong>Chevaux</strong>: <?= $voiture['chevaux'] ?> ch</li>
+              <li><strong>Couple</strong>: <?= $voiture['couple'] ?> Nm</li>
+              <li><strong>Nombre de cylindres</strong>: <?= $voiture['nb_cylindres'] ?></li>
+              <?php while ($caracteristique = $result_caracteristiques->fetch_assoc()): ?>
+                <li><strong><?= htmlspecialchars($caracteristique['nom']) ?></strong>: <?= htmlspecialchars($caracteristique['valeur']) ?></li>
+              <?php endwhile; ?>
+            </ul>
+          </div>
+          <div class="portfolio-description">
+            <h2>À propos de cette voiture</h2>
+            <p>Voici toutes les informations disponibles sur ce modèle.</p>
+          </div>
+        </div>
       </div>
-    </section><!-- End Portfolio Details Section -->
+    </div>
+  </section>
+</main>
 
-  </main><!-- End #main -->
-
-  <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper('.swiper', {
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
+</script>
 </body>
-
 </html>
+
+<?php
+$conn->close();
+?>
