@@ -14,13 +14,13 @@ body {
   }
   
   .nav-menu ul {
-    background-color: #1e1e1e;
+    background-color: #1e1e1e00;
   }
   
   
   /* Header */
   #header {
-    background-color: rgb(30, 30, 30);
+    background-color: rgba(30, 30, 30, 0);
   }
   
   /* Sections */
