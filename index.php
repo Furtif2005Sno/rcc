@@ -98,7 +98,7 @@
         </a>
       </div>
       <div class="feature col">
-        <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
           <svg class="bi" width="1em" height="1em"><use xlink:href="#people-circle"></use></svg>
         </div>
         <h3 class="fs-2 text-body-emphasis">Featured title</h3>
