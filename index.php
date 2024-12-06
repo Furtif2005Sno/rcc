@@ -27,6 +27,7 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
+  <link rel="preload" href="assets/vendor/bootstrap/css/bootstrap.min.css" as="style" onload="this.rel='stylesheet'">
   <link href="assets/css/style.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
   <script src="assets/js/main.js"></script>
@@ -366,7 +367,8 @@
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="js/script.js" defer></script>
 
 </body>
 
