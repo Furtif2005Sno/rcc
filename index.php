@@ -78,48 +78,60 @@
 
         <div class="section-title">
           <h2>Nos services</h2>
-          <p>
-            Depuis l'age de 9 ans je suis passionné par les nouvelles technologies et l'informatique. À l'age de 12 j'ai
-            eu mon premier ordinateur et j'ai commencé à apprendre la programmation, le réseau et la cybersécurité.
-          </p>
         </div>
 
         <div class="row">
-        <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-      <div class="feature col">
-        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-          <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"></use></svg>
-        </div>
-        <h3 class="fs-2 text-body-emphasis">Featured title</h3>
-        <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-        <a href="#" class="icon-link">
-          Call to action
-          <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
-        </a>
-      </div>
-      <div class="feature col">
-        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-          <svg class="bi" width="1em" height="1em"><use xlink:href="#people-circle"></use></svg>
-        </div>
-        <h3 class="fs-2 text-body-emphasis">Featured title</h3>
-        <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-        <a href="#" class="icon-link">
-          Call to action
-          <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
-        </a>
-      </div>
-      <div class="feature col">
-        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-          <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
-        </div>
-        <h3 class="fs-2 text-body-emphasis">Featured title</h3>
-        <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-        <a href="#" class="icon-link">
-          Call to action
-          <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
-        </a>
-      </div>
-    </div>
+          <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+            <div class="feature col">
+              <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+              <i class="bi bi-search"></i>
+              </div>
+              <h3 class="fs-2 text-body-emphasis text-services">Recherche personnalisée de véhicules</h3>
+              <p>Nous mettons tout en œuvre pour trouver le véhicule de vos rêves, adapté à vos besoins spécifiques.</p>
+              <p>Que vous cherchiez une voiture sportive pour un week-end ou une expérience de luxe pour une occasion spéciale, notre expertise vous garantit les meilleures options disponibles.</p>
+            </div>
+            <div class="feature col">
+              <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+              <i class="fa-regular fa-comments"></i>
+              </div>
+              <h3 class="fs-2 text-body-emphasis text-services">Conseil et accompagnement</h3>
+              <p>Notre équipe vous guide à chaque étape :</p>
+              <ul>
+                <li> <span>Conseils pour choisir le véhicule idéal selon vos préférences.</span></li>
+                <li> <span>Explications des conditions de location (durée de location, kilométrage, puissance).</span></li>
+              </ul>
+            </div>
+            <div class="feature col">
+              <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+              <i class="bi bi-people"></i>
+              </div>
+              <h3 class="fs-2 text-body-emphasis text-services">Mise en relation avec nos partenaires</h3>
+              <p>Nous collaborons avec des agences de location de confiance pour vous garantir des prestations impeccables.</p>
+              <p>Une fois votre projet défini, nous sélectionnons pour vous le partenaire le plus adapté à vos attentes et à votre budget.</p>            
+            </div>
+          </div>
+          <div class="row g-4 py-5 row-cols-1 row-cols-lg-3 justify-content-center">
+            <div class="feature col">
+              <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+              <i class="bi bi-diagram-3"></i>
+              </div>
+              <h3 class="fs-2 text-body-emphasis text-services">Gestion simplifiée de votre location</h3>
+              <p>Dites adieu aux démarches complexes. Nous nous chargeons de :</p>
+              <ul>
+                  <li> <span>Contacter les agences partenaires.</span></li>
+                  <li> <span>Comparer les offres et négocier pour obtenir les meilleures conditions.</span></li>
+                  <li> <span>Vous rediriger vers le partenaire idéal avec tous les détails nécessaires.</span></li>
+                </ul>            
+            </div>
+
+            <div class="feature col">
+              <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+              <i class="fa-regular fa-star-half-stroke"></i>
+              </div>
+              <h3 class="fs-2 text-body-emphasis text-services">Suivi et satisfaction client</h3>
+              <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+            </div>
+          </div>
         </div>
 
       </div>

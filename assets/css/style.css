@@ -958,16 +958,19 @@ section {
 .feature-icon {
   width: 4rem;
   height: 4rem;
-  border-radius: .75rem;
+  border-radius: 75px;
+  background-color: #bb0505;
 }
 
 .icon-square {
   width: 3rem;
   height: 3rem;
-  border-radius: 75px;
-  background-color: #bb0505;
+  border-radius: .75rem;
 }
 
+.icon{
+  color:#fff;
+}
 .text-shadow-1 { text-shadow: 0 .125rem .25rem rgba(0, 0, 0, .25); }
 .text-shadow-2 { text-shadow: 0 .25rem .5rem rgba(0, 0, 0, .25); }
 .text-shadow-3 { text-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .25); }
@@ -982,6 +985,7 @@ section {
   width: 3rem;
   height: 3rem;
 }
+
 
 /*--------------------------------------------------------------
 # Testimonials
