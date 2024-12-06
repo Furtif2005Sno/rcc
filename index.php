@@ -77,7 +77,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>À Propos</h2>
+          <h2>Nos services</h2>
           <p>
             Depuis l'age de 9 ans je suis passionné par les nouvelles technologies et l'informatique. À l'age de 12 j'ai
             eu mon premier ordinateur et j'ai commencé à apprendre la programmation, le réseau et la cybersécurité.
@@ -85,38 +85,41 @@
         </div>
 
         <div class="row">
-          <div class="col-lg-4">
-            <img src="assets/img/profile-img.jpg" class="img-fluid profile" alt="">
-          </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content">
-            <h3>Etudiant</h3>
-            <p class="fst-italic">
-              Etudiant en informatique, je suis passionné par le développement web et l'ingénierie réseau.
-            </p>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Date de naissance:</strong> <span id="birthdate">29
-                      Mai 2005</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span id="age"></span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Ville:</strong> <span>Annecy, France</span></li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Niveau d'étude:</strong> <span>Bac +2</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>jolan74.noirot@gmail.com</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <p>
-              Je suis un étudiant en informatique passionné par le développement web et l'ingénierie réseau. J'ai
-              commencé à apprendre le développement web en 2020 j'ai egalement commencé à apprendre la photographie en
-              2021 et j'ai commencé à apprendre l'ingénierie réseau en
-              2022.
-            </p>
-          </div>
+        <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div class="feature col">
+        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"></use></svg>
+        </div>
+        <h3 class="fs-2 text-body-emphasis">Featured title</h3>
+        <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+        <a href="#" class="icon-link">
+          Call to action
+          <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
+        </a>
+      </div>
+      <div class="feature col">
+        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#people-circle"></use></svg>
+        </div>
+        <h3 class="fs-2 text-body-emphasis">Featured title</h3>
+        <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+        <a href="#" class="icon-link">
+          Call to action
+          <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
+        </a>
+      </div>
+      <div class="feature col">
+        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+        </div>
+        <h3 class="fs-2 text-body-emphasis">Featured title</h3>
+        <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+        <a href="#" class="icon-link">
+          Call to action
+          <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
+        </a>
+      </div>
+    </div>
         </div>
 
       </div>

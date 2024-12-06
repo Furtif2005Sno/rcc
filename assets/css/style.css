@@ -415,7 +415,7 @@ section {
 .about .content h3 {
   font-weight: 700;
   font-size: 26px;
-  color: #728394;
+  color: #8ea2b7;
 }
 
 .about .content ul {
@@ -503,7 +503,7 @@ section {
   display: block;
   font-weight: 600;
   font-family: "Poppins", sans-serif;
-  color: #45505b;
+  color: #8ea2b7;
 }
 
 .skills .progress .skill .val {
@@ -530,7 +530,7 @@ section {
   font-weight: 700;
   margin-top: 20px;
   margin-bottom: 20px;
-  color: #45505b;
+  color: #8ea2b7;
 }
 
 .resume .resume-item {
@@ -609,7 +609,7 @@ section {
   font-weight: 600;
   line-height: 1;
   text-transform: uppercase;
-  color: #272829;
+  color: #8ea2b7;
   margin-bottom: 5px;
   transition: all 0.3s ease-in-out;
 }
