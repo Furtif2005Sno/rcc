@@ -208,7 +208,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Voitures disponibles</h2>
+          <h2>Véhicules disponibles</h2>
           <p>Un résumé de tout les projets effectué durant le BTS</p>
         </div>
 
