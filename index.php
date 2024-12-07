@@ -130,7 +130,8 @@
               <i class="fa-regular fa-star-half-stroke"></i>
               </div>
               <h3 class="fs-2 text-body-emphasis text-services">Suivi et satisfaction client</h3>
-              <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+              <p>Votre expérience est notre priorité !</p>
+	      <p>Nous restons disponibles tout au long de votre location et après pour nous assurer de votre satisfaction, répondre à vos éventuelles questions et vous permettre de vivre une expérience utilisateur excellente.</p>		    
             </div>
           </div>
         </div>
