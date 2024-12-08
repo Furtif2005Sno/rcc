@@ -117,8 +117,8 @@
               <i class="bi bi-diagram-3"></i>
               </div>
               <h3 class="fs-2 text-body-emphasis text-services">Gestion simplifiée de votre location</h3>
-              <p>Dites adieu aux démarches complexes. Nous nous chargeons de :</p>
-              <ul>
+                <p>Dites adieu aux démarches complexes. Nous nous chargeons de :</p>
+                <ul>
                   <li> <span>Contacter les agences partenaires.</span></li>
                   <li> <span>Comparer les offres et négocier pour obtenir les meilleures conditions.</span></li>
                   <li> <span>Vous rediriger vers le partenaire idéal avec tous les détails nécessaires.</span></li>
@@ -130,8 +130,13 @@
               <i class="fa-regular fa-star-half-stroke"></i>
               </div>
               <h3 class="fs-2 text-body-emphasis text-services">Suivi et satisfaction client</h3>
+<<<<<<< HEAD
               <p>Votre expérience est notre priorité !</p>
 	      <p>Nous restons disponibles tout au long de votre location et après pour nous assurer de votre satisfaction, répondre à vos éventuelles questions et vous permettre de vivre une expérience utilisateur excellente.</p>		    
+=======
+                <p>Votre expérience est notre priorité !</p>
+	              <p>Nous restons disponibles tout au long de votre location et après pour nous assurer de votre satisfaction, répondre à vos éventuelles questions et vous permettre de vivre une expérience utilisateur excellente.</p>	
+>>>>>>> 3400b8f (Sync des modifs)
             </div>
           </div>
         </div>
