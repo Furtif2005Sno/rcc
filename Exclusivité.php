@@ -39,7 +39,8 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        /* From Uiverse.io by bociKond */ 
+        <div class="row justify-content-center">
+        <div class="col-12 col-md-auto text-center">
         <form class="form">
         <span class="input-span">
             <label for="email" class="label">Email</label>
@@ -51,8 +52,9 @@
         /></span>
         <span class="span"><a href="#">Forgot password?</a></span>
         <input class="submit" type="submit" value="Log in" />
-        <span class="span">Don't have an account? <a href="#">Sign up</a></span>
         </form>
+        </div>
+        </div>
 
         
         <div id="preloader"></div>
