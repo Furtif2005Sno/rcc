@@ -1,5 +1,6 @@
 /* From Uiverse.io by bociKond */ 
 .form {
+    --bg-light: #efefef;
     --bg-dark: #1e1e1e;
     --clr: #bb0505;
     --clr-alpha: #9c9c9c60;
