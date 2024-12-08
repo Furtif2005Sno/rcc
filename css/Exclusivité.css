@@ -1,8 +1,8 @@
 /* From Uiverse.io by bociKond */ 
 .form {
     --bg-light: #efefef;
-    --bg-dark: #707070;
-    --clr: #58bc82;
+    --bg-dark: #1e1e1e;
+    --clr: #bb0505;
     --clr-alpha: #9c9c9c60;
     display: flex;
     flex-direction: column;
