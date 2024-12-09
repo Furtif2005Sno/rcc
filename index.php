@@ -27,8 +27,8 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <!--<link href="assets/css/style.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">-->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
   <script src="assets/js/main.js"></script>
   <script src="js/script.js"></script>
   <script src="https://kit.fontawesome.com/cc37040a86.js" crossorigin="anonymous"></script>
@@ -152,7 +152,7 @@
         $sql = "SELECT avis.note, avis.commentaire, voitures.marque, voitures.modele 
                 FROM avis 
                 JOIN voitures ON avis.voiture_id = voitures.id";
-        $result = $conn->query($sql);
+        $result = $instances[$db1]->query($sql);
         $isFirst = true;
 
         while ($row = $result->fetch_assoc()) {
@@ -186,7 +186,7 @@
           <select name="voiture_id" id="voiture_id" class="form-select" required>
             <?php
             $sql = "SELECT id, marque, modele FROM voitures";
-            $result = $conn->query($sql);
+            $result = $instances[$db1]->query($sql);
             while ($row = $result->fetch_assoc()) {
               echo '<option value="' . htmlspecialchars($row['id']) . '">' . htmlspecialchars($row['marque']) . ' ' . htmlspecialchars($row['modele']) . '</option>';
             }
@@ -225,7 +225,7 @@
             <option value="">Toutes les marques</option>
             <?php
             $sql = "SELECT DISTINCT marque FROM voitures";
-            $result = $conn->query($sql);
+            $result = $instances[$db1]->query($sql);
             while ($row = $result->fetch_assoc()) {
               echo '<option value="' . htmlspecialchars($row['marque']) . '">' . htmlspecialchars($row['marque']) . '</option>';
             }
@@ -256,10 +256,10 @@
       // Construire la requête avec les filtres
       $where = [];
       if (!empty($_GET['marque'])) {
-        $where[] = "marque = '" . $conn->real_escape_string($_GET['marque']) . "'";
+        $where[] = "marque = '" . $instances[$db1]->real_escape_string($_GET['marque']) . "'";
       }
       if (!empty($_GET['modele'])) {
-        $where[] = "modele LIKE '%" . $conn->real_escape_string($_GET['modele']) . "%'";
+        $where[] = "modele LIKE '%" . $instances[$db1]->real_escape_string($_GET['modele']) . "%'";
       }
       if (!empty($_GET['prix_min'])) {
         $where[] = "prix >= " . intval($_GET['prix_min']);
@@ -271,7 +271,7 @@
       if ($where) {
         $sql .= " WHERE " . implode(' AND ', $where);
       }
-      $result = $conn->query($sql);
+      $result = $instances[$db1]->query($sql);
 
       while ($row = $result->fetch_assoc()) {
         echo '<div class="col-lg-4 col-md-6 portfolio-item">';
