@@ -320,6 +320,7 @@
             echo '</div></div></div>';
           }
           ?>
+          <input type="range" name="Prix" id="prix">
         </div>
       </div>
     </section>
