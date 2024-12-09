@@ -108,7 +108,7 @@
               </div>
               <h3 class="fs-2 text-body-emphasis text-services">Mise en relation avec nos partenaires</h3>
               <p>Nous collaborons avec des agences de location de confiance pour vous garantir des prestations impeccables.</p>
-              <p>Une fois votre projet défini, nous sélectionnons pour vous le partenaire le plus adapté à vos attentes et à votre budget.</p>
+              <p>Une fois votre projet défini, nous sélectionnons pour vous le partenaire le plus adapté à vos attentes et à votre budget.</p>            
             </div>
           </div>
           <div class="row g-4 py-5 row-cols-1 row-cols-lg-3 justify-content-center">
@@ -122,7 +122,7 @@
                   <li> <span>Contacter les agences partenaires.</span></li>
                   <li> <span>Comparer les offres et négocier pour obtenir les meilleures conditions.</span></li>
                   <li> <span>Vous rediriger vers le partenaire idéal avec tous les détails nécessaires.</span></li>
-                </ul>
+                </ul>            
             </div>
 
             <div class="feature col">
@@ -131,7 +131,7 @@
               </div>
               <h3 class="fs-2 text-body-emphasis text-services">Suivi et satisfaction client</h3>
                 <p>Votre expérience est notre priorité !</p>
-	              <p>Nous restons disponibles tout au long de votre location et après pour nous assurer de votre satisfaction, répondre à vos éventuelles questions et vous permettre de vivre une expérience utilisateur excellente.</p>
+	              <p>Nous restons disponibles tout au long de votre location et après pour nous assurer de votre satisfaction, répondre à vos éventuelles questions et vous permettre de vivre une expérience utilisateur excellente.</p>	
             </div>
           </div>
         </div>
@@ -139,59 +139,41 @@
       </div>
     </section><!-- End About Section -->
 
-    <!-- ======= Resume Section ======= -->
-    <section id="resume" class="resume">
+    <?php
+require_once 'db_config.php';
+
+try {
+    // Connexion à la base de données
+    $db1 = Database::getConnection('db1');
+} catch (Exception $e) {
+    die("Erreur : " . $e->getMessage());
+}
+?>
+
+<!-- ======= Resume Section ======= -->
+<section id="resume" class="resume">
   <div class="container" data-aos="fade-up">
-    <div class="section-title">
-      <h2>Avis clients</h2>
-    </div>
+    <h2>Avis Clients</h2>
     <div id="carouselAvis" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <?php
-include 'db_config.php';
-
-// Chargement des variables d'environnement
-$host = 'localhost'; // Adresse du serveur (par ex : localhost)
-$dbname = 'RCC-Cars'; // Nom de la base de données
-$username = 'RCC-Cars'; // Nom d'utilisateur
-$password = 'RCC-Cars'; // Mot de passe
-
-try {
-    // Configuration de la chaîne de connexion
-    $dsn = "mysql:host=$host;dbname=$dbname;charset=utf8mb4";
-
-    // Création de l'objet PDO
-    $pdo = new PDO($dsn, $username, $password);
-
-    // Configuration des options de PDO
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Activer les exceptions pour les erreurs
-    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC); // Récupérer les résultats sous forme de tableau associatif
-
-    echo "Connexion réussie !"; // Pour vérifier la connexion (à supprimer en production)
-} catch (PDOException $e) {
-    // Gestion des erreurs de connexion
-    die("Erreur de connexion : " . $e->getMessage());
-}
-
-
-
-$sql = "SELECT avis.note, avis.commentaire, voitures.marque, voitures.modele
-                FROM avis
+        $sql = "SELECT avis.note, avis.commentaire, voitures.marque, voitures.modele 
+                FROM avis 
                 JOIN voitures ON avis.voiture_id = voitures.id";
-$result = $instances[$db1]->query($sql);
-$isFirst = true;
+        $result = $db1->query($sql);
+        $isFirst = true;
 
-while ($row = $result->fetch_assoc()) {
-    echo '<div class="carousel-item ' . ($isFirst ? 'active' : '') . '">';
-    echo '<div class="card">';
-    echo '<div class="card-body">';
-    echo '<h5 class="card-title">' . htmlspecialchars($row['marque']) . ' ' . htmlspecialchars($row['modele']) . '</h5>';
-    echo '<p class="card-text">' . htmlspecialchars($row['commentaire']) . '</p>';
-    echo '<p class="card-text">Note : ' . htmlspecialchars($row['note']) . '/5</p>';
-    echo '</div></div></div>';
-    $isFirst = false;
-}
-?>
+        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+          echo '<div class="carousel-item ' . ($isFirst ? 'active' : '') . '">';
+          echo '<div class="card">';
+          echo '<div class="card-body">';
+          echo '<h5 class="card-title">' . htmlspecialchars($row['marque']) . ' ' . htmlspecialchars($row['modele']) . '</h5>';
+          echo '<p class="card-text">' . htmlspecialchars($row['commentaire']) . '</p>';
+          echo '<p class="card-text">Note : ' . htmlspecialchars($row['note']) . '/5</p>';
+          echo '</div></div></div>';
+          $isFirst = false;
+        }
+        ?>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselAvis" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -211,12 +193,12 @@ while ($row = $result->fetch_assoc()) {
           <label for="voiture_id" class="form-label">Voiture</label>
           <select name="voiture_id" id="voiture_id" class="form-select" required>
             <?php
-$sql = "SELECT id, marque, modele FROM voitures";
-$result = $instances[$db1]->query($sql);
-while ($row = $result->fetch_assoc()) {
-    echo '<option value="' . htmlspecialchars($row['id']) . '">' . htmlspecialchars($row['marque']) . ' ' . htmlspecialchars($row['modele']) . '</option>';
-}
-?>
+            $sql = "SELECT id, marque, modele FROM voitures";
+            $result = $db1->query($sql);
+            while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+              echo '<option value="' . htmlspecialchars($row['id']) . '">' . htmlspecialchars($row['marque']) . ' ' . htmlspecialchars($row['modele']) . '</option>';
+            }
+            ?>
           </select>
         </div>
         <div class="mb-3">
@@ -234,8 +216,8 @@ while ($row = $result->fetch_assoc()) {
 </section>
 <!-- End Resume Section -->
 
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio section-bg">
+<!-- ======= Portfolio Section ======= -->
+<section id="portfolio" class="portfolio section-bg">
   <div class="container" data-aos="fade-up">
     <div class="section-title">
       <h2>Véhicules disponibles</h2>
@@ -250,12 +232,12 @@ while ($row = $result->fetch_assoc()) {
           <select id="marque" name="marque" class="form-select">
             <option value="">Toutes les marques</option>
             <?php
-$sql = "SELECT DISTINCT marque FROM voitures";
-$result = $instances[$db1]->query($sql);
-while ($row = $result->fetch_assoc()) {
-    echo '<option value="' . htmlspecialchars($row['marque']) . '">' . htmlspecialchars($row['marque']) . '</option>';
-}
-?>
+            $sql = "SELECT DISTINCT marque FROM voitures";
+            $result = $db1->query($sql);
+            while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+              echo '<option value="' . htmlspecialchars($row['marque']) . '">' . htmlspecialchars($row['marque']) . '</option>';
+            }
+            ?>
           </select>
         </div>
         <div class="col-md-4">
@@ -279,38 +261,51 @@ while ($row = $result->fetch_assoc()) {
     <!-- Portfolio -->
     <div class="row portfolio-container">
       <?php
-// Construire la requête avec les filtres
-$where = [];
-if (!empty($_GET['marque'])) {
-    $where[] = "marque = '" . $instances[$db1]->real_escape_string($_GET['marque']) . "'";
-}
-if (!empty($_GET['modele'])) {
-    $where[] = "modele LIKE '%" . $instances[$db1]->real_escape_string($_GET['modele']) . "%'";
-}
-if (!empty($_GET['prix_min'])) {
-    $where[] = "prix >= " . intval($_GET['prix_min']);
-}
-if (!empty($_GET['prix_max'])) {
-    $where[] = "prix <= " . intval($_GET['prix_max']);
-}
-$sql = "SELECT id, marque, modele, prix, photo_presentation FROM voitures";
-if ($where) {
-    $sql .= " WHERE " . implode(' AND ', $where);
-}
-$result = $instances[$db1]->query($sql);
+      // Construire la requête avec les filtres
+      $where = [];
+      if (!empty($_GET['marque'])) {
+        $where[] = "marque = :marque";
+      }
+      if (!empty($_GET['modele'])) {
+        $where[] = "modele LIKE :modele";
+      }
+      if (!empty($_GET['prix_min'])) {
+        $where[] = "prix >= :prix_min";
+      }
+      if (!empty($_GET['prix_max'])) {
+        $where[] = "prix <= :prix_max";
+      }
+      $sql = "SELECT id, marque, modele, prix, photo_presentation FROM voitures";
+      if ($where) {
+        $sql .= " WHERE " . implode(' AND ', $where);
+      }
+      $stmt = $db1->prepare($sql);
 
-while ($row = $result->fetch_assoc()) {
-    echo '<div class="col-lg-4 col-md-6 portfolio-item">';
-    echo '<div class="portfolio-wrap">';
-    echo '<img src="' . htmlspecialchars($row['photo_presentation']) . '" class="img-fluid" alt="' . htmlspecialchars($row['marque']) . ' ' . htmlspecialchars($row['modele']) . '">';
-    echo '<div class="portfolio-info">';
-    echo '<h4>' . htmlspecialchars($row['marque']) . ' ' . htmlspecialchars($row['modele']) . '</h4>';
-    echo '<p>Prix : ' . htmlspecialchars($row['prix']) . '€</p>';
-    echo '<a href="car-details.php?token=' . htmlspecialchars($row['id']) . '" class="btn btn-primary">+</a>';
-    echo '</div></div></div>';
-}
-echo 'PHP fonctionne';
-?>
+      if (!empty($_GET['marque'])) {
+        $stmt->bindValue(':marque', $_GET['marque']);
+      }
+      if (!empty($_GET['modele'])) {
+        $stmt->bindValue(':modele', "%" . $_GET['modele'] . "%");
+      }
+      if (!empty($_GET['prix_min'])) {
+        $stmt->bindValue(':prix_min', $_GET['prix_min'], PDO::PARAM_INT);
+      }
+      if (!empty($_GET['prix_max'])) {
+        $stmt->bindValue(':prix_max', $_GET['prix_max'], PDO::PARAM_INT);
+      }
+      $stmt->execute();
+
+      while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        echo '<div class="col-lg-4 col-md-6 portfolio-item">';
+        echo '<div class="portfolio-wrap">';
+        echo '<img src="' . htmlspecialchars($row['photo_presentation']) . '" class="img-fluid" alt="' . htmlspecialchars($row['marque']) . ' ' . htmlspecialchars($row['modele']) . '">';
+        echo '<div class="portfolio-info">';
+        echo '<h4>' . htmlspecialchars($row['marque']) . ' ' . htmlspecialchars($row['modele']) . '</h4>';
+        echo '<p>Prix : ' . htmlspecialchars($row['prix']) . '€</p>';
+        echo '<a href="car-details.php?token=' . htmlspecialchars($row['id']) . '" class="btn btn-primary">+</a>';
+        echo '</div></div></div>';
+      }
+      ?>
     </div>
   </div>
 </section>
