@@ -248,7 +248,6 @@
         <form id="filters-form" method="GET" action="">
           <div class="row g-3 mb-4">
             <div class="col-md-4 form__group field">
-
               <select id="marque" name="marque" class="form__field">
                 <option value="">Toutes les marques</option>
                 <?php
@@ -331,7 +330,6 @@
             echo '</div></div></div>';
           }
           ?>
-          <textarea name="" id=""></textarea>
         </div>
       </div>
     </section>
