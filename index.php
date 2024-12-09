@@ -27,8 +27,8 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
+  <!--<link href="assets/css/style.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">-->
   <script src="assets/js/main.js"></script>
   <script src="js/script.js"></script>
   <script src="https://kit.fontawesome.com/cc37040a86.js" crossorigin="anonymous"></script>
