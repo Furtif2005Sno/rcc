@@ -199,7 +199,7 @@
           </div>
 
           <!-- Formulaire pour ajouter un avis -->
-          <div class="mt-4">
+          <div class="mt-4 justify-content-center">
             <h3>Ajouter un avis</h3>
             <form action="add-avis.php" method="POST">
               <div class="mb-3 form__group field">
@@ -276,62 +276,63 @@
               <label for="prix_max" class="form__label">Prix (Max)</label>
             </div>
           </div>
-          <div class="col-md-4 align-self-end">
-            <button type="submit" class="btn btn-outline-danger rounded-pill custom-danger2">Filtrer</button>
+          <div class="row g-3 mb-4">
+            <div class="col-md-4 align-self-end">
+              <button type="submit" class="btn btn-outline-danger rounded-pill custom-danger2">Filtrer</button>
+            </div>
           </div>
-      </div>
-      </form>
+        </form>
 
-      <!-- Portfolio -->
-      <div class="row portfolio-container">
-        <?php
-        // Construire la requête avec les filtres
-        $where = [];
-        if (!empty($_GET['marque'])) {
-          $where[] = "marque = :marque";
-        }
-        if (!empty($_GET['modele'])) {
-          $where[] = "modele LIKE :modele";
-        }
-        if (!empty($_GET['prix_min'])) {
-          $where[] = "prix >= :prix_min";
-        }
-        if (!empty($_GET['prix_max'])) {
-          $where[] = "prix <= :prix_max";
-        }
-        $sql = "SELECT id, marque, modele, prix, photo_presentation FROM voitures";
-        if ($where) {
-          $sql .= " WHERE " . implode(' AND ', $where);
-        }
-        $stmt = $db1->prepare($sql);
+        <!-- Portfolio -->
+        <div class="row portfolio-container">
+          <?php
+          // Construire la requête avec les filtres
+          $where = [];
+          if (!empty($_GET['marque'])) {
+            $where[] = "marque = :marque";
+          }
+          if (!empty($_GET['modele'])) {
+            $where[] = "modele LIKE :modele";
+          }
+          if (!empty($_GET['prix_min'])) {
+            $where[] = "prix >= :prix_min";
+          }
+          if (!empty($_GET['prix_max'])) {
+            $where[] = "prix <= :prix_max";
+          }
+          $sql = "SELECT id, marque, modele, prix, photo_presentation FROM voitures";
+          if ($where) {
+            $sql .= " WHERE " . implode(' AND ', $where);
+          }
+          $stmt = $db1->prepare($sql);
 
-        if (!empty($_GET['marque'])) {
-          $stmt->bindValue(':marque', $_GET['marque']);
-        }
-        if (!empty($_GET['modele'])) {
-          $stmt->bindValue(':modele', "%" . $_GET['modele'] . "%");
-        }
-        if (!empty($_GET['prix_min'])) {
-          $stmt->bindValue(':prix_min', $_GET['prix_min'], PDO::PARAM_INT);
-        }
-        if (!empty($_GET['prix_max'])) {
-          $stmt->bindValue(':prix_max', $_GET['prix_max'], PDO::PARAM_INT);
-        }
-        $stmt->execute();
+          if (!empty($_GET['marque'])) {
+            $stmt->bindValue(':marque', $_GET['marque']);
+          }
+          if (!empty($_GET['modele'])) {
+            $stmt->bindValue(':modele', "%" . $_GET['modele'] . "%");
+          }
+          if (!empty($_GET['prix_min'])) {
+            $stmt->bindValue(':prix_min', $_GET['prix_min'], PDO::PARAM_INT);
+          }
+          if (!empty($_GET['prix_max'])) {
+            $stmt->bindValue(':prix_max', $_GET['prix_max'], PDO::PARAM_INT);
+          }
+          $stmt->execute();
 
-        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-          echo '<div class="col-lg-4 col-md-6 portfolio-item">';
-          echo '<div class="portfolio-wrap">';
-          echo '<img src="' . htmlspecialchars($row['photo_presentation']) . '" class="img-fluid" alt="' . htmlspecialchars($row['marque']) . ' ' . htmlspecialchars($row['modele']) . '">';
-          echo '<div class="portfolio-info">';
-          echo '<h4>' . htmlspecialchars($row['marque']) . ' ' . htmlspecialchars($row['modele']) . '</h4>';
-          echo '<p>Prix : ' . htmlspecialchars($row['prix']) . '€</p>';
-          echo '<a href="car-details.php?token=' . htmlspecialchars($row['id']) . '" class="btn btn-primary">+</a>';
-          echo '</div></div></div>';
-        }
-        ?>
-        <textarea name="" id=""></textarea>
-      </div>
+          while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            echo '<div class="col-lg-4 col-md-6 portfolio-item">';
+            echo '<div class="portfolio-wrap">';
+            echo '<img src="' . htmlspecialchars($row['photo_presentation']) . '" class="img-fluid" alt="' . htmlspecialchars($row['marque']) . ' ' . htmlspecialchars($row['modele']) . '">';
+            echo '<div class="portfolio-info">';
+            echo '<h4>' . htmlspecialchars($row['marque']) . ' ' . htmlspecialchars($row['modele']) . '</h4>';
+            echo '<p>Prix : ' . htmlspecialchars($row['prix']) . '€</p>';
+            echo '<a href="car-details.php?token=' . htmlspecialchars($row['id']) . '" class="btn btn-primary">+</a>';
+            echo '</div></div></div>';
+          }
+          ?>
+          <textarea name="" id=""></textarea>
+        </div>
       </div>
     </section>
     <!-- End Portfolio Section -->
