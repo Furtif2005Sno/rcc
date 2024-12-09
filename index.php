@@ -150,7 +150,7 @@
     </section><!-- End About Section -->
 
     <?php
-    require_once 'db_config.php';
+    require_once 'db-config.php';
 
     try {
       // Connexion à la base de données
@@ -352,8 +352,7 @@
       <div class="row justify-content-center">
         <div class="col-12 col-md-auto text-center">
           <div class="d-flex flex-column flex-md-row justify-content-center gap-2">
-            <a href="https://jolan-nrt.duckdns.org/" class="btn btn-outline-danger rounded-pill custom-danger2">Hub</a>
-            <a href="https://rent-connect-cars.jolan-nrt.duckdns.org/github-sync.php"
+            <a href="https://rent-connect.giize.com/github-sync.php"
               class="btn btn-outline-danger rounded-pill custom-danger2">Force sync</a>
           </div>
         </div>
