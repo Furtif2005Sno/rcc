@@ -231,7 +231,7 @@
     <!-- End Resume Section -->
 
     <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio section-bg">
+    <section id="portfolio" class="portfolio">
       <div class="container" data-aos="fade-up">
         <div class="section-title">
           <h2>Véhicules disponibles</h2>
