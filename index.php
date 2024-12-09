@@ -203,8 +203,7 @@
             <h3>Ajouter un avis</h3>
             <form action="add-avis.php" method="POST">
               <div class="mb-3">
-                <label for="voiture_id" class="form-label">Voiture</label>
-                <select name="voiture_id" id="voiture_id" class="form-select" required>
+                <select name="voiture_id" id="voiture_id" class="form__field" required>
                   <?php
                   $sql = "SELECT id, marque, modele FROM voitures";
                   $result = $db1->query($sql);
@@ -213,14 +212,19 @@
                   }
                   ?>
                 </select>
+                <label for="voiture_id" class="form__label">Voiture</label>
               </div>
               <div class="mb-3">
-                <label for="note" class="form-label">Note (sur 5)</label>
-                <input type="number" name="note" id="note" class="form-control" min="1" max="5" required>
+                <!--<label for="note" class="form-label">Note (sur 5)</label>
+                <input type="number" name="note" id="note" class="form-control" min="1" max="5" required>-->
+                <input type="number" class="form__field" placeholder="Note" name="note" id="note" min="1" max="5" required />
+                <label for="name" class="form__label">Note (sur 5)</label>
               </div>
               <div class="mb-3">
-                <label for="commentaire" class="form-label">Commentaire</label>
-                <textarea name="commentaire" id="commentaire" class="form-control" rows="4" required></textarea>
+                <!--<label for="commentaire" class="form-label">Commentaire</label>
+                <textarea name="commentaire" id="commentaire" class="form-control" rows="4" required></textarea>-->
+                <textarea type="input" class="form__field" placeholder="Commentaire" name="commentaire" id='commentaire' required ></textarea>
+                <label for="name" class="form__label">Commentaire</label>
               </div>
               <button type="submit" class="btn btn-outline-danger rounded-pill custom-danger2">Ajouter</button>
             </form>
@@ -242,8 +246,8 @@
         <form id="filters-form" method="GET" action="">
           <div class="row g-3 mb-4">
             <div class="col-md-4">
-              <label for="marque" class="form-label">Marque</label>
-              <select id="marque" name="marque" class="form-select">
+              
+              <select id="marque" name="marque" class="form__field">
                 <option value="">Toutes les marques</option>
                 <?php
                 $sql = "SELECT DISTINCT marque FROM voitures";
@@ -253,18 +257,19 @@
                 }
                 ?>
               </select>
+              <label for="marque" class="form__label">Marque</label>
             </div>
             <div class="col-md-4">
-              <label for="modele" class="form-label">Modèle</label>
-              <input type="text" id="modele" name="modele" class="form-control" placeholder="Ex : Clio">
+              <input type="text" id="modele" name="modele" class="form__field" placeholder="Ex : Clio">
+              <label for="modele" class="form__label">Modèle</label>
             </div>
             <div class="col-md-4">
-              <label for="prix_min" class="form-label">Prix (Min)</label>
-              <input type="number" id="prix_min" name="prix_min" class="form-control" placeholder="€">
+              <input type="number" id="prix_min" name="prix_min" class="form__field" placeholder="€">
+              <label for="prix_min" class="form__label">Prix (Min)</label>
             </div>
             <div class="col-md-4">
-              <label for="prix_max" class="form-label">Prix (Max)</label>
-              <input type="number" id="prix_max" name="prix_max" class="form-control" placeholder="€">
+              <input type="number" id="prix_max" name="prix_max" class="form__field" placeholder="€">
+              <label for="prix_max" class="form__label">Prix (Max)</label>
             </div>
             <div class="col-md-4 align-self-end">
               <button type="submit" class="btn btn-outline-danger rounded-pill custom-danger2">Filtrer</button>
@@ -320,7 +325,7 @@
             echo '</div></div></div>';
           }
           ?>
-          <input type="range" name="Prix" id="prix">
+          <textarea name="" id=""></textarea>
         </div>
       </div>
     </section>
