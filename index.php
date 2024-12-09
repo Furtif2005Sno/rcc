@@ -148,7 +148,7 @@
     <div id="carouselAvis" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <?php
-        include 'db-config.php';
+        include 'db_config.php';
         $sql = "SELECT avis.note, avis.commentaire, voitures.marque, voitures.modele 
                 FROM avis 
                 JOIN voitures ON avis.voiture_id = voitures.id";
