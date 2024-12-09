@@ -9,7 +9,8 @@ body {
   color: #1e1e1e;
 }
 
-.nav-menu a:hover, .nav-menu .active {
+.nav-menu a:hover,
+.nav-menu .active {
   color: #e0e0e0;
 }
 
@@ -18,9 +19,18 @@ body {
 }
 
 
+
 /* Header */
 #header {
-  background-color: rgba(30, 30, 30, 0);
+  background-color: #1e1e1e00;
+}
+
+@media (max-width: 991px) {
+
+  /* Header */
+  #header {
+    background-color: #1e1e1e;
+  }
 }
 
 /* Sections */
@@ -33,6 +43,7 @@ section {
 #hero {
   background-color: #121212;
 }
+
 #hero:before {
   content: "";
   background: rgba(30, 30, 30, 0.8);
@@ -42,7 +53,9 @@ section {
   left: 0;
   right: 0;
 }
-#hero h1, #hero p {
+
+#hero h1,
+#hero p {
   color: #e0e0e0;
 }
 
@@ -63,7 +76,8 @@ section {
   background-color: #1e1e1e;
 }
 
-.about h2, .about p {
+.about h2,
+.about p {
   color: #e0e0e0;
 }
 
@@ -85,8 +99,11 @@ section {
   color: #ff3e3e;
 }
 
-.resume-item h4, .resume-item h5, .resume-item p, .resume-item ul li {
-  background-color: #1e1e1e !important; 
+.resume-item h4,
+.resume-item h5,
+.resume-item p,
+.resume-item ul li {
+  background-color: #1e1e1e !important;
   color: #e0e0e0;
 }
 
@@ -96,7 +113,8 @@ section {
   border-radius: 25px;
 }
 
-.portfolio .section-title h2, .portfolio .section-title p {
+.portfolio .section-title h2,
+.portfolio .section-title p {
   color: #e0e0e0 !important;
 }
 
@@ -110,12 +128,14 @@ section {
   color: #e0e0e0 !important;
   border-radius: 25px !important;
 }
+
 .portfolio .portfolio-wrap .portfolio-info h4 {
   font-size: 20px;
   color: #e0e0e0 !important;
   font-weight: 600;
   border-radius: 25px !important;
 }
+
 .portfolio .portfolio-wrap .portfolio-info p {
   color: #e0e0e0 !important;
   font-size: 14px;
@@ -124,6 +144,7 @@ section {
   margin: 0;
   border-radius: 25px;
 }
+
 .portfolio .portfolio-wrap .portfolio-links a {
   color: #e0e0e0;
   margin: 0 2px;
@@ -132,6 +153,7 @@ section {
   transition: 0.3s;
   border-radius: 25px;
 }
+
 /* Footer */
 #footer {
   background-color: #121212;
@@ -146,7 +168,8 @@ section {
   color: #e0e0e0;
 }
 
-.copyright, .credits {
+.copyright,
+.credits {
   color: #e0e0e0;
 }
 
@@ -160,20 +183,29 @@ section {
   background-color: #e0e0e0;
   color: #ff3e3e;
 }
+
 .custom-danger {
-  --bs-btn-border-color: #ff3e3e; /* Ta couleur rouge personnalisée */
-  --bs-btn-hover-bg: #ff3e3e; /* Fond au survol */
-  --bs-btn-hover-border-color: #ff3e3e; /* Bordure au survol */
-  --bs-btn-color: #ff3e3e; /* Couleur du texte */
-  --bs-btn-hover-color: #fff; /* Couleur du texte au survol */
+  --bs-btn-border-color: #ff3e3e;
+  /* Ta couleur rouge personnalisée */
+  --bs-btn-hover-bg: #ff3e3e;
+  /* Fond au survol */
+  --bs-btn-hover-border-color: #ff3e3e;
+  /* Bordure au survol */
+  --bs-btn-color: #ff3e3e;
+  /* Couleur du texte */
+  --bs-btn-hover-color: #fff;
+  /* Couleur du texte au survol */
 }
 
 .custom-danger2 {
-  --bs-btn-border-color: #bb0505; /* Ta couleur rouge personnalisée */
-  --bs-btn-hover-bg: #bb0505; /* Fond au survol */
-  --bs-btn-hover-border-color: #bb0505; /* Bordure au survol */
-  --bs-btn-color: #fff; /* Couleur du texte */
-  --bs-btn-hover-color: #fff; /* Couleur du texte au survol */
+  --bs-btn-border-color: #bb0505;
+  /* Ta couleur rouge personnalisée */
+  --bs-btn-hover-bg: #bb0505;
+  /* Fond au survol */
+  --bs-btn-hover-border-color: #bb0505;
+  /* Bordure au survol */
+  --bs-btn-color: #fff;
+  /* Couleur du texte */
+  --bs-btn-hover-color: #fff;
+  /* Couleur du texte au survol */
 }
-
-
