@@ -140,7 +140,7 @@
     </section><!-- End About Section -->
 
     <!-- ======= Resume Section ======= -->
-    <section id="resume" class="resume">
+   <!-- <section id="resume" class="resume">
   <div class="container" data-aos="fade-up">
     <div class="section-title">
       <h2>Avis clients</h2>
@@ -177,7 +177,7 @@
       </button>
     </div>
 
-    <!-- Formulaire pour ajouter un avis -->
+    <!-- Formulaire pour ajouter un avis 
     <div class="mt-4">
       <h3>Ajouter un avis</h3>
       <form action="add-avis.php" method="POST">
@@ -209,14 +209,14 @@
 <!-- End Resume Section -->
 
     <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio section-bg">
+   <!-- <section id="portfolio" class="portfolio section-bg">
   <div class="container" data-aos="fade-up">
     <div class="section-title">
       <h2>Véhicules disponibles</h2>
       <p>Découvrez nos voitures disponibles en location.</p>
     </div>
 
-    <!-- Filtres -->
+     Filtres
     <form id="filters-form" method="GET" action="">
       <div class="row g-3 mb-4">
         <div class="col-md-4">
@@ -250,7 +250,7 @@
       </div>
     </form>
 
-    <!-- Portfolio -->
+    Portfolio
     <div class="row portfolio-container">
       <?php
       // Construire la requête avec les filtres
@@ -286,7 +286,7 @@
       ?>
     </div>
   </div>
-</section>
+</section>-->
 <!-- End Portfolio Section -->
 
 
