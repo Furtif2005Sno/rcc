@@ -202,7 +202,7 @@
           <div class="mt-4">
             <h3>Ajouter un avis</h3>
             <form action="add-avis.php" method="POST">
-              <div class="mb-3">
+              <div class="mb-3 form__group field">
                 <select name="voiture_id" id="voiture_id" class="form__field" required>
                   <?php
                   $sql = "SELECT id, marque, modele FROM voitures";
@@ -214,13 +214,13 @@
                 </select>
                 <label for="voiture_id" class="form__label">Voiture</label>
               </div>
-              <div class="mb-3">
+              <div class="mb-3 form__group field">
                 <!--<label for="note" class="form-label">Note (sur 5)</label>
                 <input type="number" name="note" id="note" class="form-control" min="1" max="5" required>-->
                 <input type="number" class="form__field" placeholder="Note" name="note" id="note" min="1" max="5" required />
                 <label for="name" class="form__label">Note (sur 5)</label>
               </div>
-              <div class="mb-3">
+              <div class="mb-3 form__group field">
                 <!--<label for="commentaire" class="form-label">Commentaire</label>
                 <textarea name="commentaire" id="commentaire" class="form-control" rows="4" required></textarea>-->
                 <textarea type="input" class="form__field" placeholder="Commentaire" name="commentaire" id='commentaire' required ></textarea>
@@ -245,7 +245,7 @@
         <!-- Filtres -->
         <form id="filters-form" method="GET" action="">
           <div class="row g-3 mb-4">
-            <div class="col-md-4">
+            <div class="col-md-4 form__group field">
               
               <select id="marque" name="marque" class="form__field">
                 <option value="">Toutes les marques</option>
@@ -259,15 +259,15 @@
               </select>
               <label for="marque" class="form__label">Marque</label>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 form__group field">
               <input type="text" id="modele" name="modele" class="form__field" placeholder="Ex : Clio">
               <label for="modele" class="form__label">Modèle</label>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 form__group field">
               <input type="number" id="prix_min" name="prix_min" class="form__field" placeholder="€">
               <label for="prix_min" class="form__label">Prix (Min)</label>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 form__group field">
               <input type="number" id="prix_max" name="prix_max" class="form__field" placeholder="€">
               <label for="prix_max" class="form__label">Prix (Max)</label>
             </div>
