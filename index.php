@@ -199,39 +199,44 @@
           </div>
         </div>
         <!-- Formulaire pour ajouter un avis -->
-        <div class="mt-4 justify-content-center">
-          <h3>Ajouter un avis</h3>
-          <form action="add-avis.php" method="POST">
-            <div class="mb-3 form__group field">
-              <select name="voiture_id" id="voiture_id" class="form__field" required>
-                <?php
-                $sql = "SELECT id, marque, modele FROM voitures";
-                $result = $db1->query($sql);
-                while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-                  echo '<option value="' . htmlspecialchars($row['id']) . '">' . htmlspecialchars($row['marque']) . ' ' . htmlspecialchars($row['modele']) . '</option>';
-                }
-                ?>
-              </select>
-              <label for="voiture_id" class="form__label">Voiture</label>
-            </div>
-            <div class="mb-3 form__group field">
-              <!--<label for="note" class="form-label">Note (sur 5)</label>
+        <div class="row">
+          <div class="col-4 offset-4">
+            <div class="row">
+              <div class="mt-4 center">
+                <h3>Ajouter un avis</h3>
+                <form action="add-avis.php" method="POST">
+                  <div class="mb-3 form__group field">
+                    <select name="voiture_id" id="voiture_id" class="form__field" required>
+                      <?php
+                      $sql = "SELECT id, marque, modele FROM voitures";
+                      $result = $db1->query($sql);
+                      while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                        echo '<option value="' . htmlspecialchars($row['id']) . '">' . htmlspecialchars($row['marque']) . ' ' . htmlspecialchars($row['modele']) . '</option>';
+                      }
+                      ?>
+                    </select>
+                    <label for="voiture_id" class="form__label">Voiture</label>
+                  </div>
+                  <div class="mb-3 form__group field">
+                    <!--<label for="note" class="form-label">Note (sur 5)</label>
                 <input type="number" name="note" id="note" class="form-control" min="1" max="5" required>-->
-              <input type="number" class="form__field" placeholder="Note" name="note" id="note" min="1" max="5"
-                required />
-              <label for="name" class="form__label">Note (sur 5)</label>
-            </div>
-            <div class="mb-3 form__group field">
-              <!--<label for="commentaire" class="form-label">Commentaire</label>
+                    <input type="number" class="form__field" placeholder="Note" name="note" id="note" min="1" max="5"
+                      required />
+                    <label for="name" class="form__label">Note (sur 5)</label>
+                  </div>
+                  <div class="mb-3 form__group field">
+                    <!--<label for="commentaire" class="form-label">Commentaire</label>
                 <textarea name="commentaire" id="commentaire" class="form-control" rows="4" required></textarea>-->
-              <textarea type="input" class="form__field" placeholder="Commentaire" name="commentaire" id='commentaire'
-                required></textarea>
-              <label for="name" class="form__label">Commentaire</label>
+                    <textarea type="input" class="form__field" placeholder="Commentaire" name="commentaire"
+                      id='commentaire' required></textarea>
+                    <label for="name" class="form__label">Commentaire</label>
+                  </div>
+                  <button type="submit" class="btn btn-outline-danger rounded-pill custom-danger2">Ajouter</button>
+                </form>
+              </div>
             </div>
-            <button type="submit" class="btn btn-outline-danger rounded-pill custom-danger2">Ajouter</button>
-          </form>
+          </div>
         </div>
-
       </div>
     </section>
     <!-- End Resume Section -->
