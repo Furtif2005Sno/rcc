@@ -67,7 +67,7 @@
   <section id="hero" class="d-flex flex-column justify-content-center">
     <div class="container" data-aos="zoom-in" data-aos-delay="100">
       <h1>Rent Connect</h1>
-      <p>Louez la voiture qui fera votre bonheur.
+      <p>Louez le véhicule qui fera votre bonheur.
       </p>
       <div class="social-links">
         <a href="https://www.instagram.com/rent_connect_cars/" class="instagram"><i class="bx bxl-instagram"></i></a>
@@ -331,14 +331,10 @@
   <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="container">
-      <h3>Jolan Noirot</h3>
-      <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
+      <h3>Rent Connect</h3>
+      <p>Louez le véhicule qui fera votre bonheur.</p>
       <div class="social-links">
-        <a href="https://twitter.com/Furtif2005Sno" class="twitter"><i class="bi bi-twitter-x"></i></a>
-        <a href="https://www.facebook.com/jolan.noirot.9/" class="facebook"><i class="bx bxl-facebook"></i></a>
         <a href="https://www.instagram.com/jolan_nrt/" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="https://www.linkedin.com/in/jolan-noirot-97428a294/" class="linkedin"><i
-            class="bx bxl-linkedin"></i></a>
       </div>
       <div class="row justify-content-center">
         <div class="col-12 col-md-auto text-center">
