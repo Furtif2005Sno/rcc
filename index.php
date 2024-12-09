@@ -200,7 +200,7 @@
         </div>
         <!-- Formulaire pour ajouter un avis -->
         <div class="row">
-          <div class="col-4 offset-4">
+          <div class="col-8 offset-2">
             <div class="row">
               <div class="mt-4 center">
                 <h3>Ajouter un avis</h3>
